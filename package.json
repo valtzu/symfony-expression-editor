@@ -32,7 +32,6 @@
   },
   "devDependencies": {
     "pkgroll": "^2.11.2",
-    "tsx": "^4.19.3",
     "typescript": "^5.8.2"
   },
   "license": "MIT",
