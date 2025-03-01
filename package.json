@@ -15,7 +15,9 @@
   },
   "scripts": {
     "build": "pkgroll",
-    "dev": "pkgroll --watch"
+    "dev": "pkgroll --watch",
+    "pretest": "npm run-script build",
+    "test": "exit 0 # some day we have tests here"
   },
   "description": "Advanced editor for Symfony Expression Language",
   "dependencies": {
