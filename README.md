@@ -17,3 +17,5 @@ Configuring CodeMirror and making it blend into UI can be tricky
 <script type="module" src="https://cdn.jsdelivr.net/npm/symfony-expression-editor@1.0.0/+esm"></script>
 <textarea class="form-control" is="expression-editor" rows="1">'foobar' starts with 'foo'</textarea>
 ```
+
+![image](https://github.com/user-attachments/assets/4681f02b-f974-429e-a6df-559c2069ab7c)
