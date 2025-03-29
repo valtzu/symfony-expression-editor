@@ -19,6 +19,7 @@ const bootstrap = EditorView.theme({
 
     '.cm-content': {
         padding: '0.375rem 0',
+        animation: 'fade-to-colors 0.5s ease-out 0s forwards',
     },
 
     '&:not(.cm-focused) .cm-selectionBackground, &:not(.cm-focused) .cm-activeLine, &:not(.cm-focused) .cm-activeLineGutter': {
@@ -37,6 +38,7 @@ const bootstrap = EditorView.theme({
         height: '100%',
         lineHeight: 1.85,
         flexGrow: 1,
+        animation: 'fade 0.5s ease-out 0s forwards',
     },
 
     '.cm-gutters': {
@@ -44,6 +46,9 @@ const bootstrap = EditorView.theme({
         color: 'var(--bs-tertiary-color)',
         backgroundColor: 'var(--bs-tertiary-bg)',
     },
+    '@keyframes slide-left': { from: { transform: 'translateX(-100%)', opacity: 0 } },
+    '@keyframes fade-to-colors': { from: { filter: 'grayscale(100%)' } },
+    '@keyframes fade': { from: { opacity: 0 } },
 });
 
 export default bootstrap;
