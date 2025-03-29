@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+0.3.0
+---
+* Add support for `.form-control-plaintext`, `[disabled]` and `[readonly]`
+
 0.2.0
 ---
 * Add some animations to reduce flickering

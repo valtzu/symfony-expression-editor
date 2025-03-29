@@ -13,6 +13,12 @@ const bootstrap = EditorView.theme({
         resize: 'vertical',
     },
 
+    ':host(.form-control-plaintext) &:has(.cm-content[contenteditable=false])': {
+      '--bs-body-bg': 'transparent',
+      '--bs-border-color': 'transparent',
+      'resize': 'none',
+    },
+
     '.cm-line': {
         padding: '0 0.75rem',
     },
@@ -22,7 +28,7 @@ const bootstrap = EditorView.theme({
         animation: 'fade-to-colors 0.5s ease-out 0s forwards',
     },
 
-    '&:not(.cm-focused) .cm-selectionBackground, &:not(.cm-focused) .cm-activeLine, &:not(.cm-focused) .cm-activeLineGutter': {
+    '&:not(.cm-focused) .cm-activeLine, &:not(.cm-focused) .cm-activeLineGutter': {
         backgroundColor: 'transparent',
     },
 

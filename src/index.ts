@@ -3,7 +3,7 @@ import { expressionlanguage } from "@valtzu/codemirror-lang-el";
 import { acceptCompletion } from "@codemirror/autocomplete";
 import { defaultKeymap } from "@codemirror/commands";
 import { EditorView, keymap, ViewUpdate } from "@codemirror/view";
-import { Compartment, Extension } from "@codemirror/state";
+import { Compartment, EditorState, Extension } from "@codemirror/state";
 import dark from "./theme/dark";
 import light from "./theme/light";
 
@@ -24,17 +24,30 @@ export class ExpressionEditor extends HTMLTextAreaElement {
   private readonly theme: Compartment;
   private readonly instanceStyles: Compartment;
 
+  private get editableExtension(): Extension {
+    return [
+      EditorView.editable.of(!this.readOnly && !this.disabled),
+      EditorState.readOnly.of(this.readOnly || this.disabled),
+    ];
+  }
+
   constructor() {
     super();
     this.theme = new Compartment();
     this.instanceStyles = new Compartment();
+    const readonly = new Compartment();
+
+    (new MutationObserver(() => this.editorView.dispatch({ effects: readonly.reconfigure(this.editableExtension)})))
+      .observe(this, { attributes: true, attributeFilter: ['disabled', 'readonly'] });
 
     this.dom = document.createElement('div');
-    // this.dom.style.display = 'contents';
+    this.dom.style.display = 'contents';
+    this.dom.className = this.className;
     const shadow = this.dom.attachShadow({ mode: "closed" });
 
     this.editorView = new EditorView({
       extensions: [
+        readonly.of(this.editableExtension),
         this.instanceStyles.of(EditorView.theme({})),
         basicSetup({
           useLineNumbers: JSON.parse(this.dataset.lineNumbers || 'false'),
