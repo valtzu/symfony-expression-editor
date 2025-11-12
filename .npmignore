@@ -1,6 +1,7 @@
 /.github
 /src
-/test
+/tests
+/playwright.config.ts
 /node_modules
 /rollup.config.js
 /tsconfig.json
