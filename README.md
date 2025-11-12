@@ -6,18 +6,6 @@ Contains styles so that it looks like built-in **Bootstrap 5.3** component. Edit
 
 ## How to use
 
-### Directly from frontend
-
-```html
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<script type="module" src="https://esm.sh/symfony-expression-editor"></script>
-<textarea class="form-control" is="expression-editor" rows="1">'foobar' starts with 'foo'</textarea>
-```
-
-![image](https://github.com/user-attachments/assets/4681f02b-f974-429e-a6df-559c2069ab7c)
-
-_(picture above is from [example.html](example.html))_
-
 ### Full Symfony example
 
 ```bash
@@ -80,3 +68,15 @@ class MyController extends AbstractController
 #### Result
 
 <img width="355" height="119" alt="image" src="https://github.com/user-attachments/assets/3f973fd7-4e8a-4c5f-9b22-577ccfba1a12" />
+
+### Directly from frontend
+
+```html
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script type="module" src="https://esm.sh/symfony-expression-editor"></script>
+<textarea class="form-control" is="expression-editor" rows="1">'foobar' starts with 'foo'</textarea>
+```
+
+![image](https://github.com/user-attachments/assets/4681f02b-f974-429e-a6df-559c2069ab7c)
+
+_(picture above is from [example.html](example.html))_
