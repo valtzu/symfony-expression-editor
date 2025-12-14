@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+1.1.0
+---
+
+* Prevent form submit when there are linter errors
+
 0.3.0
 ---
 * Add support for `.form-control-plaintext`, `[disabled]` and `[readonly]`

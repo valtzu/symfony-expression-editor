@@ -4,13 +4,22 @@ const bootstrap = EditorView.theme({
     '&': {
         backgroundColor: 'var(--bs-body-bg)',
         color: 'var(--bs-body-color)',
-        border: 'var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important',
+        border: 'var(--bs-border-width) var(--bs-border-style) var(--bs-border-color)',
         '--bs-border-width': '1px',
         borderRadius: 'var(--bs-border-radius)',
         fontSize: '0.8125rem !important',
         overflow: 'hidden',
         transition: 'border-color .15s ease-in-out, box-shadow .15s ease-in-out',
         resize: 'vertical',
+    },
+
+    ':host(.is-invalid) &': {
+      borderColor: 'var(--bs-form-invalid-border-color)',
+      paddingRight: 'calc(1.5em + .75rem)',
+      backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e")`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'calc(.75em + .375rem) calc(.75em + .375rem)',
+      backgroundPosition: 'top calc(.375em + .1875rem) right calc(.375em + .1875rem)',
     },
 
     ':host(.form-control-plaintext) &:has(.cm-content[contenteditable=false])': {
